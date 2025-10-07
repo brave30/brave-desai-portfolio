@@ -12,10 +12,12 @@ export default function ScrollNormalize() {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       } else {
         const id = hash.slice(1);
-        const target = document.getElementById(id);
-        if (target && typeof target.scrollIntoView === "function") {
-          // Wait one more frame so layout settles, then jump to anchor
-          requestAnimationFrame(() => target.scrollIntoView({ behavior: "auto", block: "start" }));
+        if (typeof window !== 'undefined') {
+          const target = document.getElementById(id);
+          if (target && typeof target.scrollIntoView === "function") {
+            // Wait one more frame so layout settles, then jump to anchor
+            requestAnimationFrame(() => target.scrollIntoView({ behavior: "auto", block: "start" }));
+          }
         }
       }
     };
