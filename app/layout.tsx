@@ -18,6 +18,28 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  openGraph: {
+    title: "Brave Desai - AI/ML Engineer Portfolio",
+    description: "AI/ML Engineer building scalable intelligent systems that transform data into actionable insights. View my projects, experience, and resume.",
+    url: "https://brave-desai-portfolio.vercel.app",
+    siteName: "Brave Desai Portfolio",
+    images: [
+      {
+        url: "/AI.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brave Desai - AI/ML Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brave Desai - AI/ML Engineer Portfolio",
+    description: "AI/ML Engineer building scalable intelligent systems that transform data into actionable insights.",
+    images: ["/AI.jpg"],
+  },
 };
 
 export const viewport = {

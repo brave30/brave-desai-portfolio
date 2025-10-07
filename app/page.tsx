@@ -11,6 +11,9 @@ import Footer from "@/components/Footer";
 import ScrollNormalize from "@/components/ScrollNormalize";
 import FirstScrollNudge from "@/components/FirstScrollNudge";
 
+// Force dynamic rendering to avoid SSR issues
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 "  >
