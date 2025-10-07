@@ -108,7 +108,9 @@ export const Vortex = (props: VortexProps) => {
     renderGlow(canvas, ctx);
     renderToScreen(canvas, ctx);
 
-    window.requestAnimationFrame(() => draw(canvas, ctx));
+    if (typeof window !== 'undefined') {
+      window.requestAnimationFrame(() => draw(canvas, ctx));
+    }
   };
 
   const drawParticles = (ctx: CanvasRenderingContext2D) => {
@@ -229,13 +231,15 @@ export const Vortex = (props: VortexProps) => {
 
   useEffect(() => {
     setup();
-    window.addEventListener("resize", () => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (canvas && ctx) {
-        resize(canvas, ctx);
-      }
-    });
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", () => {
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext("2d");
+        if (canvas && ctx) {
+          resize(canvas, ctx);
+        }
+      });
+    }
   }, []);
 
   return (

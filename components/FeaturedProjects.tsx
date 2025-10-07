@@ -144,19 +144,21 @@ export default function FeaturedProjects() {
   // responsive page size
   const [pageSize, setPageSize] = useState(2);
   useEffect(() => {
-    const mqLg = window.matchMedia("(min-width: 1024px)");
-    const mqSm = window.matchMedia("(min-width: 640px)");
-    // 2 cards on desktop, 1 card otherwise
-    const apply = () => setPageSize(mqLg.matches ? 2 : 1);
-    apply();
-    const onLg = () => apply();
-    const onSm = () => apply();
-    mqLg.addEventListener("change", onLg);
-    mqSm.addEventListener("change", onSm);
-    return () => {
-      mqLg.removeEventListener("change", onLg);
-      mqSm.removeEventListener("change", onSm);
-    };
+    if (typeof window !== 'undefined') {
+      const mqLg = window.matchMedia("(min-width: 1024px)");
+      const mqSm = window.matchMedia("(min-width: 640px)");
+      // 2 cards on desktop, 1 card otherwise
+      const apply = () => setPageSize(mqLg.matches ? 2 : 1);
+      apply();
+      const onLg = () => apply();
+      const onSm = () => apply();
+      mqLg.addEventListener("change", onLg);
+      mqSm.addEventListener("change", onSm);
+      return () => {
+        mqLg.removeEventListener("change", onLg);
+        mqSm.removeEventListener("change", onSm);
+      };
+    }
   }, []);
 
   // pages and translation

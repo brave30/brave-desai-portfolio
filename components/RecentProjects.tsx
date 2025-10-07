@@ -21,16 +21,18 @@ const RecentProjects = () => {
   const [direction, setDirection] = useState<1 | -1>(1);
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const apply = () => setPageSize(mq.matches ? 2 : 1);
-    apply();
-    try {
-      mq.addEventListener('change', apply);
-      return () => mq.removeEventListener('change', apply);
-    } catch {
-      // Safari fallback
-      mq.addListener(apply);
-      return () => mq.removeListener(apply);
+    if (typeof window !== 'undefined') {
+      const mq = window.matchMedia('(min-width: 768px)');
+      const apply = () => setPageSize(mq.matches ? 2 : 1);
+      apply();
+      try {
+        mq.addEventListener('change', apply);
+        return () => mq.removeEventListener('change', apply);
+      } catch {
+        // Safari fallback
+        mq.addListener(apply);
+        return () => mq.removeListener(apply);
+      }
     }
   }, []);
 
