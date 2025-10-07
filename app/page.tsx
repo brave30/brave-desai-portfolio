@@ -8,6 +8,9 @@ import { navItems } from "@/data";
 import Experience from "@/components/Experience";
 import Approach from "@/components/Approach";
 import Footer from "@/components/Footer";
+
+// Force dynamic rendering to avoid SSR issues
+export const dynamic = 'force-dynamic';
 import ScrollNormalize from "@/components/ScrollNormalize";
 import FirstScrollNudge from "@/components/FirstScrollNudge";
 
