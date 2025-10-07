@@ -14,6 +14,28 @@ import FirstScrollNudge from "@/components/FirstScrollNudge";
 // Force dynamic rendering to avoid SSR issues
 export const dynamic = 'force-dynamic';
 
+// Add metadata for LinkedIn
+export const metadata = {
+  title: "Brave Desai - AI/ML Engineer Portfolio",
+  description: "AI/ML Engineer building scalable intelligent systems that transform data into actionable insights. View my projects, experience, and resume.",
+  openGraph: {
+    title: "Brave Desai - AI/ML Engineer Portfolio",
+    description: "AI/ML Engineer building scalable intelligent systems that transform data into actionable insights. View my projects, experience, and resume.",
+    url: "https://brave-desai-portfolio.vercel.app",
+    siteName: "Brave Desai Portfolio",
+    images: [
+      {
+        url: "https://brave-desai-portfolio.vercel.app/AI.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brave Desai - AI/ML Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 "  >
