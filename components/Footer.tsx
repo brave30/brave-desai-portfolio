@@ -63,14 +63,16 @@ const Footer = () => {
               title="Download Resume"
               icon={<RxResume />}
               position='right'
-              handleClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Brave_Desai_Resume.pdf';
-                link.download = 'Brave_Desai_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+                     handleClick={() => {
+                       if (typeof window !== 'undefined') {
+                         const link = document.createElement('a');
+                         link.href = '/Brave_Desai_Resume.pdf';
+                         link.download = 'Brave_Desai_Resume.pdf';
+                         document.body.appendChild(link);
+                         link.click();
+                         document.body.removeChild(link);
+                       }
+                     }}
             />
             </motion.div>
 
