@@ -11,6 +11,9 @@ import Footer from "@/components/Footer";
 import ScrollNormalize from "@/components/ScrollNormalize";
 import FirstScrollNudge from "@/components/FirstScrollNudge";
 
+// Force dynamic rendering to avoid SSR issues
+export const dynamic = 'force-dynamic';
+
 // Add metadata for LinkedIn
 export const metadata = {
   title: "Brave Desai - AI/ML Engineer Portfolio",
