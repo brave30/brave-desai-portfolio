@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable static generation to avoid SSR issues
-  output: 'standalone',
-  experimental: {
-    esmExternals: false,
-  },
+  // Your existing configuration options
 };
 
 export default nextConfig;
