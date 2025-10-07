@@ -165,7 +165,7 @@ export const workExperience = [
     desc: "Built AI platforms (Ojavix & Hirin.ai) with advanced NLP and agentic reasoning (Claude 3.7, Llama 3.3); deployed on AWS Bedrock achieving 98%+ retrieval accuracy through optimized vector embeddings and semantic search. Led multi-layered RAG with ReAct planning, reducing response time by 40% and improving user satisfaction scores by 35%. Implemented continuous evaluation pipeline using Comet Opik and DeepEval for real-time model performance monitoring.",
     className: "md:col-span-2",
     thumbnail: "./AI.jpg",
-    period: "2023 - 2024",
+    period: "2023 - 2025",
     location: "Ahmedabad, India",
     company: "Growexx",
   },
